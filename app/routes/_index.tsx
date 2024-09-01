@@ -21,7 +21,7 @@ export default function Index() {
                   <h1 className="text-7xl font-bold tracking-tight text-gray-900">Allied Health Services</h1>
                   <p className="text-3xl text-right">Ensuring Stable Housing for Everyone</p>
                 </div>
-                <img className="rounded mr-4" src={apartmentImg} alt="Housing" />
+                <img className="rounded-lg sm:mr-4" src={apartmentImg} alt="Housing" />
             </div>
           </section>
 
