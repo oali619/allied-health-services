@@ -1,22 +1,42 @@
 import { employees } from '../constants'
 
 export default function Team() {
-    return (
-        <section id="team">
-        <h2 className="text-2xl font-bold leading-7 text-gray-900 sm:truncate sm:text-3xl sm:tracking-tight">Our Team</h2>
-            <p>Meet the dedicated team of professionals who are here to help you find and maintain stable housing.</p>
-            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
-              {employees.map((employee) => (
-                <div key={employee.name} className="bg-white overflow-hidden shadow rounded-lg">
-                  <div className="p-5">
-                    <img className="h-24 w-24 rounded-full mx-auto" src={employee.img} alt="" />
-                    <h3 className="text-lg font-bold leading-6 text-gray-900">{employee.name}</h3>
-                    <p className="mt-1 text-sm text-gray-500">{employee.title}</p>
-                    <p className="mt-1 text-sm text-gray-500">{employee.location}</p>
-                  </div>
-                </div>
-              ))}
+      return (
+        <div className="py-24 sm:py-32">
+           <div
+              aria-hidden="true"
+              className="hidden sm:absolute sm:-top-10 sm:right-1/2 sm:-z-10 sm:mr-10 sm:block sm:transform-gpu sm:blur-3xl"
+            >
+              <div
+                style={{
+                  clipPath:
+                    'polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)',
+                }}
+                className="aspect-[1097/845] w-[68.5625rem] bg-gradient-to-tr from-[#ff4694] to-[#776fff] opacity-20"
+              />
             </div>
-        </section>
-    )
+          <div className="mx-auto grid max-w-7xl gap-x-8 gap-y-20 px-6 lg:px-8 xl:grid-cols-3">
+            <div className="max-w-2xl">
+              <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Meet our team</h2>
+              <p className="mt-6 text-lg leading-8 text-gray-600">
+                With years of experience assisting those in need, our team is here to help you find and maintain stable housing.
+              </p>
+            </div>
+            <ul className="grid gap-x-8 gap-y-12 sm:grid-cols-2 sm:gap-y-16 xl:col-span-2">
+              {employees.map((employee) => (
+                <li key={employee.name}>
+                  <div className="flex items-center gap-x-6">
+                    <img alt="" src={employee.img} className="h-16 w-16 rounded-full" />
+                    <div>
+                      <h3 className="text-base font-semibold leading-7 tracking-tight text-gray-900">{employee.name}</h3>
+                      <p className="text-sm font-semibold leading-6 text-indigo-600">{employee.role}</p>
+                      <p className="text-sm font-semibold leading-6 text-indigo-600">{employee.location}</p>
+                    </div>
+                  </div>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      )
 }

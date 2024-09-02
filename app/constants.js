@@ -1,17 +1,17 @@
 export const navigation = [
-    { name: 'Home', href: '/', current: true },
+    { name: 'Home', to: '/', current: true },
     { name: 'Services', to: '/services', current: false },
-    { name: 'Success Stories', href: '#successStories', current: false },
+    { name: 'Success Stories', current: false },
     { name: 'Resources', to: '/resources', current: false },
     { name: 'Team', to: '/team', current: false },
     { name: 'Contact', to: '/contact', current: false },
   ]
 
 export const employees = [
-    { name: 'Ismail Ali', title: 'Director', location: 'Greater Minneapolis/St. Paul', img: 'https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500' },
-    { name: 'Hamza Ali', title: 'Program Manager', location: 'Greater Minneapolis/St. Paul', img: 'https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500' },
-    { name: 'Obsa Ali', title: 'Program Manager', location: 'Greater Minneapolis/St. Paul', img: 'https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500' },
-    { name: 'Zahra Abdullahi', title: 'Recruiter', location: 'Greater Minneapolis/St. Paul', img: 'https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500' },
+    { name: 'Ismail Ali', role: 'Director', location: 'Greater Minneapolis/St. Paul', img: 'https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500' },
+    { name: 'Hamza Ali', role: 'Program Manager', location: 'Greater Minneapolis/St. Paul', img: 'https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500' },
+    { name: 'Obsa Ali', role: 'Program Manager', location: 'Greater Minneapolis/St. Paul', img: 'https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500' },
+    { name: 'Zahra Abdullahi', role: 'Recruiter', location: 'Greater Minneapolis/St. Paul', img: 'https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500' },
   ];
 
 export  const testimonials = [

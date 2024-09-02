@@ -26,8 +26,10 @@ export default function Header() {
                     {navigation.map((item) => (
                       <Link
                         key={item.name}
-                        to={item?.to ? item.to : item.href}
+                        to={item.to || '#successStories'}
                         aria-current={item.current ? 'page' : undefined}
+                        // TODO: Fix the onClick logic
+                        onClick={() => { navigation.forEach((nav) => nav.name === item.name ? item.current = true : item.current = false) }}
                         className={classNames(
                           item.current ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
                           'rounded-md px-3 py-2 text-sm font-medium',
@@ -57,7 +59,7 @@ export default function Header() {
                 <DisclosureButton
                   key={item.name}
                   as="a"
-                  href={item.href}
+                  href={item.to || '#successStories'}
                   aria-current={item.current ? 'page' : undefined}
                   className={classNames(
                     item.current ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
