@@ -1,8 +1,10 @@
+import { armhsImg, hssImage, dhsImage } from './images';
+
 export const navigation = [
     { name: 'Home', to: '/', current: true },
     { name: 'Services', to: '/services', current: false },
     { name: 'Success Stories', current: false },
-    { name: 'Resources', to: '/resources', current: false },
+    { name: 'Referral', to: '/referral', current: false },
     { name: 'Team', to: '/team', current: false },
     { name: 'Contact', to: '/contact', current: false },
   ]
@@ -19,3 +21,36 @@ export  const testimonials = [
     { quote: '“The financial assistance they were able to find me was a lifesaver for my family.”', client: 'Anonymous Client', location: 'St. Paul, MN', },
     { quote: '“Their team helped me navigate the complex housing system and avoid eviction.”', client: 'Anonymous Client', location: 'Burnsville, MN', },
   ];
+
+export const services = [
+    {
+      name: 'Housing Stabilization Services',
+      description: 'Find and keep housing',
+      imageSrc: hssImage,
+      imageAlt: 'Hand handing over a pair of keys',
+      href: '/services',
+    },
+    {
+      name: 'Adult Rehabilitation Mental Health Services',
+      description: 'coming soon',
+      imageSrc: armhsImg,
+      imageAlt: 'Therapist sitting and listening to a patient',
+      href: '/',
+    },
+    {
+      name: '245D Services',
+      description: 'coming soon',
+      imageSrc: dhsImage,
+      imageAlt: 'Case Manager providing in home care to elderly client',
+      href: '/',
+    },
+  ]
+
+export const values = [
+    { name: 'Empathy', description: 'We approach every situation with deep understanding and compassion for the experiences and emotions of others.' },
+    { name: 'Integrity', description: 'We uphold the highest standards of honesty, transparency, and ethical practice in all our interactions.' },
+    { name: 'Advocacy', description: 'We champion the rights and needs of individuals and communities, striving to create a more just and equitable society.' },
+    { name: 'Collaboration', description: 'We believe in the power of partnerships and teamwork to achieve the best outcomes for those we serve.' },
+    { name: 'Respect', description: 'We honor the dignity, worth, and unique perspectives of every individual, fostering an inclusive and supportive environment.' },
+    { name: 'Empowerment', description: 'We are dedicated to helping others realize their potential, encouraging self-sufficiency and personal growth.' },
+  ]

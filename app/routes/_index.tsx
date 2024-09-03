@@ -1,7 +1,6 @@
 import type { MetaFunction } from "@remix-run/node";
-import { Link } from "@remix-run/react";
-import { testimonials } from '../constants'
-import apartmentImg from '../images/apartment.jpg'
+import { testimonials, services, values } from '../constants'
+import { apartmentJPG } from '../images'
 
 export const meta: MetaFunction = () => {
   return [
@@ -14,18 +13,18 @@ export default function Index() {
   return (
     <>
       <div className="min-h-full">
-      <div
-              aria-hidden="true"
-              className="hidden sm:absolute sm:-top-10 sm:right-1/2 sm:-z-10 sm:mr-10 sm:block sm:transform-gpu sm:blur-3xl"
-            >
-              <div
-                style={{
-                  clipPath:
-                    'polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)',
-                }}
-                className="aspect-[1097/845] w-[68.5625rem] bg-gradient-to-tr from-[#ff4694] to-[#776fff] opacity-20"
-              />
-            </div>
+        <div
+          aria-hidden="true"
+          className="hidden sm:absolute sm:-top-10 sm:right-1/2 sm:-z-10 sm:mr-10 sm:block sm:transform-gpu sm:blur-3xl"
+        >
+          <div
+            style={{
+              clipPath:
+                'polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)',
+            }}
+            className="aspect-[1097/845] w-[68.5625rem] bg-gradient-to-tr from-[#ff4694] to-[#776fff] opacity-20"
+          />
+        </div>
         <main>
           <section>
             <div className="flex flex-col sm:flex-row mt-20">
@@ -33,27 +32,86 @@ export default function Index() {
                   <h1 className="text-7xl font-bold tracking-tight text-gray-900">Allied Health Services</h1>
                   <p className="text-3xl text-right">Ensuring Stable Housing for Everyone</p>
                 </div>
-                <img className="rounded-lg sm:mr-4" src={apartmentImg} alt="Housing" />
+                <img className="rounded-lg sm:mr-4" src={apartmentJPG} alt="Housing" />
             </div>
           </section>
 
           <div className="mx-auto max-w-8xl px-4 py-6 sm:px-6 lg:px-8">
-            <section className="flex flex-col sm:flex-row">
-              <div className="flex-1">
-                <h2 className="text-5xl font-bold text-gray-900">Housing Stabilization Services</h2>
-                <p className="sm:w-1/2">Housing Stabilization Services is a new Minnesota Medical Assistance benefit to help people with disabilities, including mental illness and substance use disorder, and seniors find and keep housing.</p>             
-              </div>
-              <div className="flex-1">
-                <p>Minnesota supports people with disabilities to live, work, and play in communities of their choice. Various challenges and barriers can make it hard to find housing, budget, interact with landlords and neighbors, and understand the rules of a lease. Finding and keeping stable affordable housing is important to the health of Minnesotans. Housing Stabilization Services is a new Medical Assistance benefit designed to help people with disabilities and seniors find and keep housing. Housing Stabilization Services is a home and community-based service.</p>
-              </div>
+            <section className="grid" id="services">
+              <h2 className="text-5xl font-bold text-gray-900 place-self-center">Our Services</h2>
               <div>
-              <div>
-                <p>Know anyone in need of housing support? We want to hear form you!</p>
-                <Link to="/referral" className="bg-gray-800 hover:bg-gray-700 text-white font-semibold py-2 px-4 rounded">Refer Client</Link>
-              </div>
+                <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+                  <div className="mx-auto max-w-2xl py-8 lg:max-w-none">
+                    <div className="mt-6 space-y-12 lg:grid lg:grid-cols-3 lg:gap-x-6 lg:space-y-0">
+                      {services.map((service) => (
+                        <div key={service.name} className="group">
+                          <div className="h-80 w-full overflow-hidden rounded-lg bg-white sm:aspect-h-1 sm:aspect-w-2 lg:aspect-h-1 lg:aspect-w-1 group-hover:opacity-75 sm:h-64">
+                            <a href={service.href} className="block w-full h-full">
+                              <img
+                                alt={service.imageAlt}
+                                src={service.imageSrc}
+                                className="h-full w-full object-cover object-center"
+                              />
+                            </a>
+                          </div>
+                          <a className="mt-6 text-base font-semibold text-gray-900" href={service.href}>{service.name}</a>
+                          <p className="text-sm text-gray-500">
+                            {service.description}
+                          </p>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
               </div>
             </section>
 
+            <section className="grid mt-6" id="mission">
+              <h2 className="text-5xl font-bold text-gray-900 place-self-center">Mission & Values</h2>
+                <div className="mx-auto grid max-w-2xl grid-cols-1 items-center gap-x-8 gap-y-16 px-4 py-8 sm:px-6 lg:max-w-7xl lg:grid-cols-2 lg:px-8">
+                  <div>
+                    <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Mission</h2>
+                    <p className="mt-4 text-gray-500">
+                      Our mission is to empower individuals and communities by providing compassionate,
+                      evidence-based social work services that promote well-being, resilience, and social justice.
+                      We are committed to fostering positive change through personalized support, advocacy,
+                      and collaboration, ensuring that every person has the opportunity to thrive.
+                    </p>
+
+                    <h2 className="mt-16 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Values</h2>
+                    <dl className="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 sm:gap-y-16 lg:gap-x-8">
+                      {values.map((value) => (
+                        <div key={value.name} className="border-t border-gray-200 pt-4">
+                          <dt className="font-medium text-gray-900">{value.name}</dt>
+                          <dd className="mt-2 text-sm text-gray-500">{value.description}</dd>
+                        </div>
+                      ))}
+                    </dl>
+                  </div>
+                  <div className="grid grid-cols-2 grid-rows-2 gap-4 sm:gap-6 lg:gap-8">
+                    <img
+                      alt="Walnut card tray with white powder coated steel divider and 3 punchout holes."
+                      src="https://tailwindui.com/img/ecommerce-images/product-feature-03-detail-01.jpg"
+                      className="rounded-lg bg-gray-100"
+                    />
+                    <img
+                      alt="Top down view of walnut card tray with embedded magnets and card groove."
+                      src="https://tailwindui.com/img/ecommerce-images/product-feature-03-detail-02.jpg"
+                      className="rounded-lg bg-gray-100"
+                    />
+                    <img
+                      alt="Side of walnut card tray with card groove and recessed card area."
+                      src="https://tailwindui.com/img/ecommerce-images/product-feature-03-detail-03.jpg"
+                      className="rounded-lg bg-gray-100"
+                    />
+                    <img
+                      alt="Walnut card tray filled with cards and card angled in dedicated groove."
+                      src="https://tailwindui.com/img/ecommerce-images/product-feature-03-detail-04.jpg"
+                      className="rounded-lg bg-gray-100"
+                    />
+                  </div>
+                </div>
+            </section>
 
             <section id="successStories">
               <h2 className="text-5xl font-bold text-gray-900">Success Stories</h2>
