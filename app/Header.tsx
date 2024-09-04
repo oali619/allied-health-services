@@ -26,7 +26,7 @@ export default function Header() {
                     {navigation.map((item) => (
                       <Link
                         key={item.name}
-                        to={item.to || '#successStories'}
+                        to={item.to}
                         aria-current={item.current ? 'page' : undefined}
                         // TODO: Fix the onClick logic
                         onClick={() => { navigation.forEach((nav) => nav.name === item.name ? item.current = true : item.current = false) }}
@@ -59,7 +59,7 @@ export default function Header() {
                 <DisclosureButton
                   key={item.name}
                   as="a"
-                  href={item.to || '#successStories'}
+                  href={item.to}
                   aria-current={item.current ? 'page' : undefined}
                   className={classNames(
                     item.current ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white',

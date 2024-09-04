@@ -3,7 +3,7 @@ import { armhsImg, hssImage, dhsImage } from './images';
 export const navigation = [
     { name: 'Home', to: '/', current: true },
     { name: 'Services', to: '/services', current: false },
-    { name: 'Success Stories', current: false },
+    { name: 'Success Stories', current: false, to: '/#successStories' },
     { name: 'Referral', to: '/referral', current: false },
     { name: 'Team', to: '/team', current: false },
     { name: 'Contact', to: '/contact', current: false },
@@ -17,9 +17,9 @@ export const employees = [
   ];
 
 export  const testimonials = [
-    { quote: '“Thanks to Allied Health Services, I found a safe place to live and received the support I needed to get back on my feet.”', client: 'Anonymous Client', location: 'Brooklyn Center', },
-    { quote: '“The financial assistance they were able to find me was a lifesaver for my family.”', client: 'Anonymous Client', location: 'St. Paul, MN', },
-    { quote: '“Their team helped me navigate the complex housing system and avoid eviction.”', client: 'Anonymous Client', location: 'Burnsville, MN', },
+    { quote: '“Thanks to Allied Health Services, I found a safe place to live and received the support I needed to get back on my feet.”', client: 'Anonymous Client', location: 'Brooklyn Center, MN', img: 'https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500' },
+    { quote: '“The financial assistance they were able to find me was a lifesaver for my family.”', client: 'Anonymous Client', location: 'St. Paul, MN', img: 'https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500' },
+    { quote: '“Their team helped me navigate the complex housing system and avoid eviction.”', client: 'Anonymous Client', location: 'Burnsville, MN', img: 'https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500' },
   ];
 
 export const services = [
