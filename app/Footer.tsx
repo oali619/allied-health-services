@@ -1,6 +1,6 @@
 export default function Footer() {
     return (
-      <footer className="bg-gray-800 text-gray-300 fixed bottom-0 left-0 right-0">
+      <footer className="bg-gray-800 text-gray-300 sm:fixed sm:bottom-0 sm:left-0 sm:right-0">
       <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between">
         <h2 className="text-2xl font-bold text-gray-300 sm:truncate sm:text-3xl sm:tracking-tight">Information</h2>
           <p>Hours. M-F 8:00am - 6:00pm</p>

@@ -46,6 +46,13 @@ export const services = [
     },
   ]
 
+export const hssServiceTypes = [
+    { name: 'Eligibility', value: 'Qualified recipients must be receiving Medical Assistance(MA)/Have Private Insurance, be 18 years or older and have disabilities or are seniors (65 and older) who require assistance to find and/or keep housing.' },
+    { name: 'Housing Consultation', value: 'People who do not have waiver or targeted case management or a MSHO/MSC+ care coordinator, but need Housing Stabilization Services, can complete the person-centered planning needed through an enrolled housing consultant.' },
+    { name: 'Housing Transitioning', value: 'Services that assist a person to plan for, find, and move to a home in the community.' },
+    { name: 'Housing Sustaining', value: 'Services that supports a person to maintain living in their home in the community.' },
+  ]
+
 export const values = [
     { name: 'Empathy', description: 'We approach every situation with deep understanding and compassion for the experiences and emotions of others.' },
     { name: 'Integrity', description: 'We uphold the highest standards of honesty, transparency, and ethical practice in all our interactions.' },
@@ -54,3 +61,30 @@ export const values = [
     { name: 'Respect', description: 'We honor the dignity, worth, and unique perspectives of every individual, fostering an inclusive and supportive environment.' },
     { name: 'Empowerment', description: 'We are dedicated to helping others realize their potential, encouraging self-sufficiency and personal growth.' },
   ]
+
+ export const referrerType = [
+    { id: 1, name: 'Case Manager' },
+    { id: 2, name: 'Physician' },
+    { id: 3, name: 'Self' },
+    { id: 4, name: 'Other' },
+  ];
+
+export const insuranceTypes = [
+    { id: 1, name: 'Medical Assistance' },
+    { id: 2, name: 'UCare' },
+    { id: 3, name: 'Blue Cross Blue Shield' },
+    { id: 4, name: 'Health Partners' },
+    { id: 5, name: 'Hennepin Health' },
+    { id: 6, name: 'Medica' },
+    { id: 7, name: 'Other' },
+  ];
+
+export const waiverTypes = [
+    { id: 1, name: 'Community Alternative Care Waiver (CAC)' },
+    { id: 2, name: 'Community Access for Disability Inclusion Waiver (CADI)' },
+    { id: 3, name: 'Developmental Disabilities Waiver (DD)' },
+    { id: 4, name: 'Brain Injury Waiver (BI)' },
+    { id: 5, name: 'Elderly Waiver (EW)' },
+    { id: 6, name: 'Alternative Care Waiver (AC)' },
+    { id: 7, name: 'Other' },
+  ];
