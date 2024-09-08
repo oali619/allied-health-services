@@ -63,28 +63,28 @@ export const values = [
   ]
 
  export const referrerType = [
-    { id: 1, name: 'Case Manager' },
-    { id: 2, name: 'Physician' },
-    { id: 3, name: 'Self' },
-    { id: 4, name: 'Other' },
+    { id: 1, type: 'Case Manager' },
+    { id: 2, type: 'Physician' },
+    { id: 3, type: 'Self' },
+    { id: 4, type: 'Other' },
   ];
 
 export const insuranceTypes = [
-    { id: 1, name: 'Medical Assistance' },
-    { id: 2, name: 'UCare' },
-    { id: 3, name: 'Blue Cross Blue Shield' },
-    { id: 4, name: 'Health Partners' },
-    { id: 5, name: 'Hennepin Health' },
-    { id: 6, name: 'Medica' },
-    { id: 7, name: 'Other' },
+    { id: 1, type: 'Medical Assistance' },
+    { id: 2, type: 'UCare' },
+    { id: 3, type: 'Blue Cross Blue Shield' },
+    { id: 4, type: 'Health Partners' },
+    { id: 5, type: 'Hennepin Health' },
+    { id: 6, type: 'Medica' },
+    { id: 7, type: 'Other' },
   ];
 
 export const waiverTypes = [
-    { id: 1, name: 'Community Alternative Care Waiver (CAC)' },
-    { id: 2, name: 'Community Access for Disability Inclusion Waiver (CADI)' },
-    { id: 3, name: 'Developmental Disabilities Waiver (DD)' },
-    { id: 4, name: 'Brain Injury Waiver (BI)' },
-    { id: 5, name: 'Elderly Waiver (EW)' },
-    { id: 6, name: 'Alternative Care Waiver (AC)' },
-    { id: 7, name: 'Other' },
+    { id: 1, type: 'Community Alternative Care Waiver (CAC)' },
+    { id: 2, type: 'Community Access for Disability Inclusion Waiver (CADI)' },
+    { id: 3, type: 'Developmental Disabilities Waiver (DD)' },
+    { id: 4, type: 'Brain Injury Waiver (BI)' },
+    { id: 5, type: 'Elderly Waiver (EW)' },
+    { id: 6, type: 'Alternative Care Waiver (AC)' },
+    { id: 7, type: 'Other' },
   ];
