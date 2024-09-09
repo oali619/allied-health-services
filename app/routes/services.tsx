@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { Link } from "@remix-run/react";
 import { Disclosure, DisclosureButton, DisclosurePanel} from '@headlessui/react'
-import { hssServiceTypes } from '../constants'
+import { hssServiceTypes } from '../src/constants'
 
 export default function Services() {
   const hssServiceCategories = [

@@ -1,4 +1,4 @@
-import { armhsImg, hssImage, dhsImage } from './images';
+import { armhsImg, hssImage, dhsImage } from '../images';
 
 export const navigation = [
     { name: 'Home', to: '/', current: true },

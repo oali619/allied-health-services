@@ -1,5 +1,5 @@
 import type { MetaFunction } from "@remix-run/node";
-import { testimonials, services, values } from '../constants'
+import { testimonials, services, values } from '../src/constants'
 import { apartmentJPG, mission1, mission2, mission3, mission4 } from '../images'
 
 export const meta: MetaFunction = () => {

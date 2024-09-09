@@ -1,4 +1,4 @@
-import { employees } from '../constants'
+import { employees } from '../src/constants'
 
 export default function Team() {
       return (

@@ -1,7 +1,7 @@
 import { Link } from "@remix-run/react";
 import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
-import { navigation } from './constants'
+import { navigation } from '../constants'
 
 function classNames(...classes: string[]) {
     return classes.filter(Boolean).join(' ')
