@@ -4,7 +4,7 @@ import { apartmentJPG, mission1, mission2, mission3, mission4 } from '../images'
 
 export const meta: MetaFunction = () => {
   return [
-    { title: "New Remix App" },
+    { title: "Allied Health Services" },
     { name: "description", content: "Welcome to Remix!" },
   ];
 };
