@@ -153,9 +153,6 @@ export default function Index() {
                   ))}
                 </div>
               </div >
-
-              {/* <DecoratorBlob1 />
-              <DecoratorBlob2 /> */}
             </section>
           </div>
         </main>

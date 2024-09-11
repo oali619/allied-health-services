@@ -19,13 +19,14 @@ export async function action({ request }: ActionFunctionArgs) {
 	const resend = new Resend(process.env.RESEND_API_KEY);
 
 	const response = await resend.emails.send({
-		from: 'onboarding@resend.dev',
-		to: 'obsaahmedali@gmail.com',
+		from: 'admin@alliedhealthmn.com',
+		to: 'referral@alliedhealthmn.com',
 		subject: 'New Referral',
 		react: <EmailTemplate options={data} referral={true} />,
 		// attachments: formData.getAll('attachments').map((file) => ({ content: file })),
 	});
-  return response;
+	// Add alert for success or failure
+	return response;
 }
 
 export default function Referral() {
@@ -47,7 +48,7 @@ export default function Referral() {
 		<form
 			action='/referral'
 			method='POST'
-			className='py-[100px] sm:pb-[175px] mx-[15px]'
+			className='py-[100px] mx-[15px]'
 			id='referral_form'
 		>
 			<div className='space-y-12'>
@@ -490,7 +491,7 @@ export default function Referral() {
 								<input
 									id='attachments'
 									name='attachments'
-									type='attachments'
+									type='file'
 									className='block w-full rounded-md border-0 py-1.5 text-gray-900 placeholder:text-gray-400 sm:text-sm sm:leading-6'
 									multiple
 								/>
