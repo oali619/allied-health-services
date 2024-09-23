@@ -81,7 +81,7 @@ export default function EmailTemplate({ options, referral }) {
 			</div>
 		);
 	}
-	console.log({ options });
+
 	const {
 		'first-name': firstname,
 		'last-name': lastname,

@@ -1,5 +1,11 @@
 import { useState, useEffect } from 'react';
-import { ActionFunctionArgs } from '@remix-run/node';
+import {
+	ActionFunctionArgs,
+	unstable_composeUploadHandlers,
+	unstable_createFileUploadHandler,
+	unstable_createMemoryUploadHandler,
+	unstable_parseMultipartFormData,
+} from '@remix-run/node';
 import { useActionData } from '@remix-run/react';
 import { Resend } from 'resend';
 import {
@@ -15,8 +21,20 @@ import { referrerType, insuranceTypes, waiverTypes } from '../src/constants';
 import EmailTemplate from '~/src/Components/EmailTemplate';
 
 export async function action({ request }: ActionFunctionArgs) {
-	const formData = await request.formData();
+	const uploadHandler = unstable_composeUploadHandlers(
+		unstable_createFileUploadHandler({
+			maxPartSize: 5_000_000,
+			file: ({ filename }) => filename,
+		}),
+		// parse everything else into memory
+		unstable_createMemoryUploadHandler()
+	);
+	const formData = await unstable_parseMultipartFormData(
+		request,
+		uploadHandler
+	);
 	const data = Object.fromEntries(formData.entries());
+	const file = data.attachments as File;
 
 	const resend = new Resend(process.env.RESEND_API_KEY);
 	const response = await resend.emails.send({
@@ -24,7 +42,12 @@ export async function action({ request }: ActionFunctionArgs) {
 		to: 'referral@alliedhealthmn.com',
 		subject: 'New Referral',
 		react: <EmailTemplate options={data} referral={true} />,
-		// attachments: formData.getAll('attachments').map((file) => ({ content: file })),
+		attachments: [
+			{
+				filename: file.name,
+				content: Buffer.from(await file.arrayBuffer()),
+			},
+		],
 	});
 	return response;
 }
@@ -45,7 +68,7 @@ export default function Referral() {
 	function handleClear() {
 		const referralForm = document.getElementById('referral_form');
 		if (referralForm) {
-			referralForm.reset();
+			(referralForm as HTMLFormElement).reset();
 		}
 		setSelectedReferrer(referrerType[0]);
 		setSelectedInsurance(insuranceTypes[0]);
@@ -62,6 +85,7 @@ export default function Referral() {
 				method='POST'
 				className='py-[100px] mx-[15px]'
 				id='referral_form'
+				encType='multipart/form-data'
 			>
 				<div className='space-y-12'>
 					<div className='border-b border-gray-900/10 pb-4 grid place-items-center'>
@@ -524,7 +548,7 @@ export default function Referral() {
 					<button
 						type='submit'
 						className='rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600'
-						//   onClick={handleSubmit}
+						onClick={() => toast.success('Referral submission pending...')}
 					>
 						Send
 					</button>
