@@ -10,6 +10,7 @@ import { navigation } from '../constants';
 function classNames(...classes: string[]) {
 	return classes.filter(Boolean).join(' ');
 }
+import { logo } from '../../images';
 
 export default function Header() {
 	return (
@@ -20,9 +21,9 @@ export default function Header() {
 						<div className='flex items-center'>
 							<Link to='/' className='flex-shrink-0'>
 								<img
-									alt='Allied Health Services'
-									src='https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500'
-									className='h-8 w-8'
+									alt='Allied Health Services Logo'
+									src={logo}
+									className='h-16 w-16'
 								/>
 							</Link>
 							<div className='hidden md:block'>
