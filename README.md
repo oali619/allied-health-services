@@ -42,3 +42,4 @@ This template comes with [Tailwind CSS](https://tailwindcss.com/) already config
 
 ## Test
 npm run test
+
