@@ -55,7 +55,7 @@ export default function Services() {
 						))}
 					</div>
           {/* TODO: need to do something here label or something or redesign this */}
-          <p className='text-4xl font-bold mt-16 sm:mt-20 mb-4 tracking-tight text-gray-900 text-center'>TLDR;</p>
+          <p className='text-4xl font-bold mt-16 sm:mt-20 mb-4 tracking-tight text-gray-900 text-center'>TL;DR</p>
 					<div className='grid grid-cols-1 gap-8 sm:grid-cols-4'>
 						{hssServiceTypes.map((hssServiceType) => (
 							<div key={hssServiceType.name}>

@@ -8,7 +8,6 @@ import {
 import './tailwind.css';
 import { Toaster } from 'sonner';
 import Header from './src/Components/Header';
-import Footer from './src/Components/Footer';
 
 export function Layout({ children }: { children: React.ReactNode }) {
 	return (
@@ -25,7 +24,6 @@ export function Layout({ children }: { children: React.ReactNode }) {
 				{children}
 				<ScrollRestoration />
 				<Scripts />
-				<Footer />
 			</body>
 		</html>
 	);

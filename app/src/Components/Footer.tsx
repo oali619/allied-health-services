@@ -2,7 +2,7 @@ import { logo } from '~/images';
 
 export default function Footer() {
 	return (
-		<div className='relative bg-gray-900 text-gray-100 -mx-8 -mb-8'>
+		<div className='bg-gray-900 text-gray-100 -mx-8 -mb-8'>
 			<div className='max-w-screen-xl mx-auto py-20 lg:py-24'>
 				<div className='flex items-center justify-center flex-col px-8'>
 					<div className='flex items-center justify-center md:justify-start'>
