@@ -6,7 +6,7 @@ export default function Footer() {
 	return (
 		<footer
 			className={`bg-gray-800 text-gray-300 sm:bottom-0 sm:left-0 sm:right-0 ${
-				pathname === ('/team' || '/services') ? 'sm:fixed' : ''
+				(pathname === '/team' || pathname === '/services') ? 'sm:fixed' : ''
 			}`}
 		>
 			<div className='grid sm:grid-rows-4 sm:grid-cols-2 items-end'>

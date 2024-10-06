@@ -1,22 +1,16 @@
+/* eslint-disable jsx-a11y/no-static-element-interactions */
+/* eslint-disable jsx-a11y/click-events-have-key-events */
 import { useState } from 'react';
 import { Link } from '@remix-run/react';
-import {
-	Disclosure,
-	DisclosureButton,
-	DisclosurePanel,
-} from '@headlessui/react';
-import { hssServiceTypes } from '../src/constants';
+import { ChevronUpDownIcon } from '@heroicons/react/20/solid';
+import { hssServiceCategories, hssServiceTypes } from '../src/constants';
 
 export default function Services() {
-	const hssServiceCategories = [
-		{ name: 'Housing Search' },
-		{ name: 'Financial Assistance' },
-		{ name: 'Eviction Protection' },
-		{ name: 'Tenant Education' },
-		{ name: 'And More' },
-	];
-
-	const [disclosureIsOpen, setDisclosureIsOpen] = useState(false);
+	const [activeQuestionIndex, setActiveQuestionIndex] = useState(null);
+	const toggleQuestion = (questionIndex) => {
+		if (activeQuestionIndex === questionIndex) setActiveQuestionIndex(null);
+		else setActiveQuestionIndex(questionIndex);
+	};
 
 	return (
 		<div className='overflow-hidden  py-24 sm:py-32'>
@@ -54,56 +48,38 @@ export default function Services() {
 							</div>
 						))}
 					</div>
-          {/* TODO: need to do something here label or something or redesign this */}
-          <p className='text-4xl font-bold mt-16 sm:mt-20 mb-4 tracking-tight text-gray-900 text-center'>TL;DR</p>
-					<div className='grid grid-cols-1 gap-8 sm:grid-cols-4'>
-						{hssServiceTypes.map((hssServiceType) => (
-							<div key={hssServiceType.name}>
-								<Disclosure as='div' className='pb-6'>
-									<DisclosureButton className='group flex items-center justify-between gap-2 font-semibold text-gray-700'>
-										{hssServiceType.name}
-										{/* TODO: fix the onClick functionality changing all + to - */}
-                    {/* clicking the name opens accordian but doesn't change +/- */}
-										{disclosureIsOpen ? (
-											<svg
-												xmlns='http://www.w3.org/2000/svg'
-												fill='none'
-												viewBox='0 0 24 24'
-												strokeWidth='1.5'
-												stroke='currentColor'
-												className='size-6'
-												onClick={() => setDisclosureIsOpen(!disclosureIsOpen)}
-											>
-												<path
-													strokeLinecap='round'
-													strokeLinejoin='round'
-													d='M15 12H9m12 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z'
-												/>
-											</svg>
-										) : (
-											<svg
-												xmlns='http://www.w3.org/2000/svg'
-												fill='none'
-												viewBox='0 0 24 24'
-												strokeWidth='1.5'
-												stroke='currentColor'
-												className='size-6'
-												onClick={() => setDisclosureIsOpen(!disclosureIsOpen)}
-											>
-												<path
-													strokeLinecap='round'
-													strokeLinejoin='round'
-													d='M12 9v6m3-3H9m12 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z'
-												/>
-											</svg>
-										)}
-									</DisclosureButton>
-									<DisclosurePanel className='tracking-tight text-gray-500'>
-										{hssServiceType.value}
-									</DisclosurePanel>
-								</Disclosure>
+					<div className='mx-auto py-20 lg:py-24'>
+						<div className='flex flex-col items-center'>
+							<div>
+								<h2 className='text-4xl sm:text-5xl font-black tracking-wide text-center w-full'>
+									FAQs
+								</h2>
 							</div>
-						))}
+							<dl className='mt-4 w-3/5 relative'>
+								{hssServiceTypes.map((serviceType, index) => (
+									<div
+										key={index}
+										onClick={() => {
+											toggleQuestion(index);
+										}}
+										className='group select-none mt-5 px-8 sm:px-10 py-5 sm:py-4 rounded-lg text-gray-800 hover:text-gray-900 bg-gray-200 hover:bg-gray-300 transition duration-300'
+									>
+										<dt className='flex justify-between items-center cursor-pointer'>
+											<span className='text-lg lg:text-xl font-semibold'>
+												{serviceType.name}
+											</span>
+
+											<ChevronUpDownIcon className='w-6 h-6' />
+										</dt>
+										{activeQuestionIndex === index && (
+											<dd className='pointer-events-none text-sm sm:text-base leading-relaxed'>
+												{serviceType.value}
+											</dd>
+										)}
+									</div>
+								))}
+							</dl>
+						</div>
 					</div>
 				</div>
 				<div className='mx-auto max-w-2xl lg:mx-0 py-6'>

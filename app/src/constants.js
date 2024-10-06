@@ -46,6 +46,14 @@ export const services = [
     },
   ]
 
+export const hssServiceCategories = [
+		{ name: 'Housing Search' },
+		{ name: 'Financial Assistance' },
+		{ name: 'Eviction Protection' },
+		{ name: 'Tenant Education' },
+		{ name: 'And More' },
+	];
+
 export const hssServiceTypes = [
     { name: 'Eligibility', value: 'Qualified recipients must be receiving Medical Assistance(MA)/Have Private Insurance, be 18 years or older and have disabilities or are seniors (65 and older) who require assistance to find and/or keep housing.' },
     { name: 'Housing Consultation', value: 'People who do not have waiver or targeted case management or a MSHO/MSC+ care coordinator, but need Housing Stabilization Services, can complete the person-centered planning needed through an enrolled housing consultant.' },
