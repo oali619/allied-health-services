@@ -13,7 +13,7 @@ export const employees = [
     { name: 'Ismail Ali', role: 'Director', location: 'Greater Minneapolis/St. Paul', img: 'https://tailwindui.com/plus/img/logos/mark.svg?color=indigo&shade=600' },
     { name: 'Hamza Ali', role: 'Program Manager', location: 'Greater Minneapolis/St. Paul', img: 'https://tailwindui.com/plus/img/logos/mark.svg?color=indigo&shade=600' },
     { name: 'Obsa Ali', role: 'Program Manager', location: 'Greater Minneapolis/St. Paul', img: 'https://tailwindui.com/plus/img/logos/mark.svg?color=indigo&shade=600' },
-    { name: 'Zahra Abdullahi', role: 'Outreach Coordinator', location: 'Greater Minneapolis/St. Paul', img: 'https://tailwindui.com/plus/img/logos/mark.svg?color=indigo&shade=600' },
+    // { name: 'Zahra Abdullahi', role: 'Outreach Coordinator', location: 'Greater Minneapolis/St. Paul', img: 'https://tailwindui.com/plus/img/logos/mark.svg?color=indigo&shade=600' },
   ];
 
 export  const testimonials = [
