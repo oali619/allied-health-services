@@ -67,7 +67,7 @@ export default function Index() {
               </div>
             </section>
 
-            <section className="grid mt-6" id="mission">
+            <section className="grid mt-6 mb-12" id="mission">
             <div
                 aria-hidden="true"
                 className="hidden absolute blur-3xl sm:right-1/2 sm:-z-10 sm:mr-10 sm:block sm:transform-gpu "
@@ -126,7 +126,7 @@ export default function Index() {
                 </div>
             </section>
 
-            <section id="successStories">
+            {/* <section id="successStories">
               <div
                 aria-hidden="true"
                 className="hidden absolute blur-3xl sm:-z-10 sm:mr-10 sm:block sm:transform-gpu "
@@ -154,7 +154,7 @@ export default function Index() {
                   ))}
                 </div>
               </div >
-            </section>
+            </section> */}
 
             <Footer />
           </div>

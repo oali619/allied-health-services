@@ -3,7 +3,7 @@ import { armhsImg, hssImage, dhsImage } from '../images';
 export const navigation = [
     { name: 'Home', to: '/', current: true },
     { name: 'Services', to: '/services', current: false },
-    { name: 'Success Stories', current: false, to: '/#successStories' },
+    // { name: 'Success Stories', current: false, to: '/#successStories' },
     { name: 'Referral', to: '/referral', current: false },
     { name: 'Team', to: '/team', current: false },
     { name: 'Contact', to: '/contact', current: false },
